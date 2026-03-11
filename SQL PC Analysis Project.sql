@@ -88,8 +88,21 @@ select Sales_Person_Name,
 from dbo.pc_data
 group by Sales_Person_Name;
 
+-- 19. Find average Credit Score per Payment Method.
+select Payment_Method,
+       AVG(Credit_Score) as average_credit_score
+from dbo.pc_data
+group by Payment_Method;
 
 
+
+
+
+
+
+
+-- 20. Calculate total Cost of Repairs per Sales Person Department.
+select
 
 select*
 from dbo.pc_data;
