@@ -76,6 +76,20 @@ select Storage_Type, AVG(Sale_Price) as AverageStorageType
 from dbo.pc_data
 group by Storage_Type;
 
+-- 17. Calculate total revenue per Shop Name.
+select Shop_Name, 
+       SUM(Sale_Price) as total_revenue
+from dbo.pc_data
+group by Shop_Name;
+
+-- 18. Calculate total revenue per Sales Person Name.
+select Sales_Person_Name,
+       SUM(Sale_Price) as total_revenue
+from dbo.pc_data
+group by Sales_Person_Name;
+
+
+
 
 select*
 from dbo.pc_data;
