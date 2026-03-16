@@ -94,15 +94,11 @@ select Payment_Method,
 from dbo.pc_data
 group by Payment_Method;
 
-
-
-
-
-
-
-
 -- 20. Calculate total Cost of Repairs per Sales Person Department.
-select
+select Sales_Person_Department, 
+       SUM(Cost_of_Repairs) as total_repairs_cost
+from dbo.pc_data
+group by Sales_Person_Department;
 
 select*
 from dbo.pc_data;
