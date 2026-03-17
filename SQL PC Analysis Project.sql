@@ -129,6 +129,12 @@ select top 1 PC_Model, Sale_Price
 from dbo.pc_data
 order by Sale_Price DESC;
 
+-- 26. Calculate the average number of days between Purchase Date and Ship Date.
+select AVG(DATEDIFF(day, 
+CAST(Purchase_Date AS date)
+CAST(Ship_date as date))) as average_days
+from dbo.pc_data;
+
 
 select*
 from dbo.pc_data;
