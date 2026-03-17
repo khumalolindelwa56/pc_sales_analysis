@@ -67,7 +67,7 @@ select SUM(Finance_Amount) as TotalProfit
 from dbo.pc_data;
 
 -- 15. Find total revenue per PC Make.
-select PC_Make, COUNT(*) as TotalRevenue
+select PC_Make, SUM(Sale_price) as TotalRevenue
 from dbo.pc_data
 group by PC_Make;
 
@@ -109,8 +109,7 @@ from dbo.pc_data
 group by Shop_Name;
 
 -- 22. Calculate profit margin per sale ((Sale Price - Cost Price) / Sale Price).
-select Sale_Price, Cost_Price
-       (Sale_Price - Cost_Price) / Sale_Price as profit_margin
+select SUM(Sale_Price - Cost_Price /Sale_Price) as profit_margin
 from dbo.pc_data;
 
 -- 23. Determine which Continent has the highest total revenue.
@@ -131,8 +130,8 @@ order by Sale_Price DESC;
 
 -- 26. Calculate the average number of days between Purchase Date and Ship Date.
 select AVG(DATEDIFF(day, 
-CAST(Purchase_Date AS date)
-CAST(Ship_date as date))) as average_days
+TRY_CAST(Purchase_Date AS datetime)
+TRY_CAST(Ship_date as date))) as average_days
 from dbo.pc_data;
 
 
