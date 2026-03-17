@@ -113,5 +113,11 @@ select Sale_Price, Cost_Price
        (Sale_Price - Cost_Price) / Sale_Price as profit_margin
 from dbo.pc_data;
 
+-- 23. Determine which Continent has the highest total revenue.
+select top 1 Continent, SUM(Sale_Price) as total_revenue
+from dbo.pc_data
+group by Continent
+order by total_revenue DESC;
+
 select*
 from dbo.pc_data;
