@@ -124,5 +124,11 @@ select RAM, AVG(Sale_Price) as average_sale_price
 from dbo.pc_data
 group by RAM;
 
+-- 25. Find the PC Model with the highest Sale Price.
+select top 1 PC_Model, Sale_Price
+from dbo.pc_data
+order by Sale_Price DESC;
+
+
 select*
 from dbo.pc_data;
