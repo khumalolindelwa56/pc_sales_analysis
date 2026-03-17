@@ -100,5 +100,18 @@ select Sales_Person_Department,
 from dbo.pc_data
 group by Sales_Person_Department;
 
+-- ADVANCED QUESTIONS
+
+-- 21. Calculate profit per Shop Name.
+select Shop_Name,
+       SUM(Sale_Price - Cost_Price) as total_profit
+from dbo.pc_data
+group by Shop_Name;
+
+-- 22. Calculate profit margin per sale ((Sale Price - Cost Price) / Sale Price).
+select Sale_Price, Cost_Price
+       (Sale_Price - Cost_Price) / Sale_Price as profit_margin
+from dbo.pc_data;
+
 select*
 from dbo.pc_data;
