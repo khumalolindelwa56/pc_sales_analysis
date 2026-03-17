@@ -119,5 +119,10 @@ from dbo.pc_data
 group by Continent
 order by total_revenue DESC;
 
+-- 24. Calculate average Sale Price per RAM size.
+select RAM, AVG(Sale_Price) as average_sale_price
+from dbo.pc_data
+group by RAM;
+
 select*
 from dbo.pc_data;
